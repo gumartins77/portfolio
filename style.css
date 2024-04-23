@@ -14,6 +14,7 @@ html {
 body {
     background-color: #000;
     height: 100vh;
+    transition: .5s;
 }
 
 .interface {
@@ -46,6 +47,7 @@ h2.titulo {
     color: #FFF;
     font-size: 38px;
     text-align: center;
+    transition: .5s;
 }
 
 h2.titulo span {
@@ -170,6 +172,70 @@ header nav.menu-desktop ul li {
     display: none;
 }
 
+/* ESTILO DO MODO DARK */
+
+.trilho {
+    width: 60px;
+    height: 30px;
+    background-color: #4D4D4D;
+    border-radius: 40px;
+    position: relative;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.trilho .indicador {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 40px;
+    transform: scale(.9);
+    position: absolute;
+    left: 0;
+    transition: .5s;
+}
+
+.trilho.dark {
+    background-color: #C3C3C3;
+}
+
+.trilho.dark .indicador {
+    left: 30px;
+    background-color: #FFF;
+}
+
+body.dark {
+    background-color: #FFF;
+}
+
+body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark footer .line-footer p a {
+    color: #000;
+}
+
+body.dark section.portfolio, body.dark footer{
+    box-shadow: 0 0 40px 10px #a3a3a31d;
+}
+
+body.dark header nav.menu-desktop a:hover {
+    color: #000;
+}
+
+body.dark .menu-mobile, body.dark .menu-mobile nav ul li a {
+    background-color: #FFF;
+}
+
+body.dark .menu-mobile nav ul li a {
+    color: #000;
+}
+
+body.dark .menu-mobile nav ul li a:hover {
+    background-color: #00FF08;
+}
+
+body.dark .btn-social button, body.dark .btn-contato button {
+    color: #FFF;
+}
+
 /* ESTILO DO TOPO DO SITE */
 
 section.topo-do-site {
@@ -186,6 +252,7 @@ section.topo-do-site .flex {
     color: #FFF;
     font-size: 42px;
     line-height: 40px;
+    transition: .5s;
 }
 
 .topo-do-site .txt-topo-site h1 span {
@@ -195,6 +262,7 @@ section.topo-do-site .flex {
 .topo-do-site .txt-topo-site p {
     color: #FFF;
     margin: 40px 0;
+    transition: .5s;
 }
 
 .topo-do-site .img-topo-site img{
@@ -262,6 +330,7 @@ section.sobre .flex {
 
 .sobre .txt-sobre {
     color: #FFF;
+    transition: .5s;
 }
 
 .sobre .txt-sobre h2 {
@@ -370,6 +439,7 @@ footer .line-footer p i {
 footer .line-footer p a {
     text-decoration: none;
     color: #FFF;
+    transition: .5s;
 }
 
 /* ESTILO MOBILE */
