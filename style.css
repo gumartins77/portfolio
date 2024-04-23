@@ -38,7 +38,7 @@ body {
     transition: .2s;
 }
 
-.btn-contato button:hover {
+.btn-contato button:hover, form .btn-enviar input[type=submit]:hover {
     box-shadow: 0px 0px 8px #00FF08;
     transform: scale(1.05);
 }
@@ -63,7 +63,7 @@ h2.titulo span {
     height: 60px;
     border-radius: 30%;
     border: none;
-    /* background-color: #00FF08; */
+    background-color: #242424;
     font-size: 30px;
     cursor: pointer;
     margin: 0 5px;
@@ -104,7 +104,7 @@ h2.titulo span {
 }
 
 .link-3::before {
-    background-color: #DD2A7B
+    background-image: linear-gradient(#f9ce34,  #ee2a7b,  #6228d7);
 }
 
 .btn-social button::before {
@@ -356,12 +356,20 @@ body.dark .menu-mobile nav ul li a:hover {
     background-color: #00FF08;
 }
 
-body.dark .btn-contato button {
+body.dark .btn-contato button, body.dark form .btn-enviar input[type=submit] {
     color: #FFF;
 }
 
 body.dark .overlay-menu {
     background-color: #000000ad;
+}
+
+body.dark form input, body.dark form textarea {
+    background-color: #a3a3a31d;
+}
+
+body.dark .btn-social button {
+    background-color: #a3a3a31d;
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -537,6 +545,53 @@ section.portfolio .flex {
     opacity: 1;
 }
 
+/* ESTILO DO FORMULARIO DE CONTATO */
+
+section.formulario {
+    padding: 80px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input, form textarea {
+    width: 100%;
+    background-color: #242424;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    height: 200px;
+    max-height: 200px;
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input[type=submit] {
+    /* width: 120px; */
+    background-color: #00FF08;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
 /* ESTILO DO FOOTER */
 
 footer {
@@ -679,5 +734,10 @@ footer .line-footer p a {
             text-align: center;
         }
 
+        /* ESTILO DO FORMULARIO DE CONTATO */
+
+        section.formulario {
+            padding: 40px 8%;
+        }
 }
 
