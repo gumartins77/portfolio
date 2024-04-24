@@ -463,6 +463,10 @@ section.especialidades .flex {
     margin: 15px 0; 
 }
 
+/* .especialidades .especialidades-box p {
+    text-align: justify
+} */
+
 /* ESTILO DO SOBRE */
 
 section.sobre {
@@ -721,36 +725,36 @@ footer .line-footer p a {
         text-align: center;
     }
 
-        /* ESTILO DO PORTFOLIO */
+    /* ESTILO DO PORTFOLIO */
 
-        section.portfolio {
-            padding: 80px 8%;
-        }
+    section.portfolio {
+        padding: 80px 8%;
+    }
 
-        section.portfolio .flex {
-            gap: 60px;
-        }
+    section.portfolio .flex {
+        gap: 60px;
+    }
 
-        .img-port {
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-        }
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
 
-        /* ESTILO DO FOOTER */
+    /* ESTILO DO FOOTER */
 
-        footer .flex {
-            gap: 30px;
-        }
+    footer .flex {
+        gap: 30px;
+    }
 
-        footer .line-footer {
-            text-align: center;
-        }
+    footer .line-footer {
+        text-align: center;
+    }
 
-        /* ESTILO DO FORMULARIO DE CONTATO */
+    /* ESTILO DO FORMULARIO DE CONTATO */
 
-        section.formulario {
-            padding: 40px 8%;
-        }
+    section.formulario {
+        padding: 40px 8%;
+    }
 }
 
