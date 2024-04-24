@@ -29,7 +29,13 @@
   <script src="menu.js" defer></script>
   <script src="dark.js" defer></script>
   <script src="reveal.js" defer></script>
+  <script src="mask.js" defer></script>
   <!-- FIM SCRIPTS JS -->
+
+  <!-- SCRIPT JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+  <!-- FIM SCRIPT JQUERY -->
 
   <title>GM .DEV</title>
 </head>
@@ -77,7 +83,7 @@
             <li><a href="#especialidades">Especialidades</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#portfolio">Projetos</a></li>
-            <li><a href="http://wa.me/5519992599246">Contato</a></li>
+            <li><a href="#formulario">Contato</a></li>
           </ul>
         </nav>
 
@@ -200,10 +206,10 @@
         <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
         <form action="">
-          <input class="efeito-input-form-1" type="text" name="" id="" placeholder="Seu nome completo:" required>
-          <input class="efeito-input-form-2" type="text" name="" id="" placeholder="Seu email:" required>
-          <input class="efeito-input-form-3" type="text" name="" id="" placeholder="Seu celular:">
-          <textarea class="efeito-input-form-4" name="" id="" placeholder="Sua mensagem" required></textarea>
+          <input class="efeito-input-form-1" type="text" name="nome-form" id="nome-form" placeholder="Seu nome completo:" required>
+          <input class="efeito-input-form-2" type="text" name="email-form" id="email-form" placeholder="Seu email:" inputmode="email" required>
+          <input class="efeito-input-form-3" type="text" name="celular-form" id="celular-form" placeholder="Seu celular:" inputmode="numeric">
+          <textarea class="efeito-input-form-4" name="mensagem-form" id="mensagem-form" placeholder="Sua mensagem" required></textarea>
           <div class="btn-enviar efeito-btn-enviar"><input type="submit" value="Enviar"></div>
         </form>
       </div>
