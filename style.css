@@ -392,6 +392,10 @@ body.dark form .input-single .input:valid ~ label {
     color: #6F6F6F;
 }
 
+body.dark .especialidades .especialidades-box:hover {
+    box-shadow: 0px 0px 20px #BABABA78;
+}
+
 /* ESTILO DO TOPO DO SITE */
 
 section.topo-do-site {
@@ -456,7 +460,8 @@ section.especialidades .flex {
 }
 
 .especialidades .especialidades-box:hover {
-    transform: scale(1.05);
+    transition: ease-in-out .2s !important;
+    transform: translateY(-26px) !important;
     box-shadow: 0px 0px 20px #FFFFFF78;
 }
 
