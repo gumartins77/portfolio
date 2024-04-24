@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +16,21 @@
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- FIM BOOTSTRAP ICONS -->
+
+  <!-- LINK CSS -->
   <link rel="stylesheet" href="style.css" />
+  <!-- FIM LINK CSS -->
+
+  <!-- SCRIPT SCROLL REVEAL -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- FIM SCRIPT SCROLL REVEAL -->
+
+  <!-- SCRIPTS JS -->
   <script src="menu.js" defer></script>
   <script src="dark.js" defer></script>
+  <script src="reveal.js" defer></script>
+  <!-- FIM SCRIPTS JS -->
+
   <title>GM .DEV</title>
 </head>
 
@@ -78,7 +91,7 @@
     <section class="topo-do-site" id="topo-do-site">
       <div class="interface">
         <div class="flex">
-          <div class="txt-topo-site">
+          <div class="txt-topo-site efeito-txt-topo">
             <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL <span>.</span></h1>
             <p>
               Criatividade e inovação andam lado a lado. Com uma combinação
@@ -96,7 +109,7 @@
             </p>
           </div>
 
-          <div class="img-topo-site">
+          <div class="img-topo-site efeito-img-topo">
             <img src="images/gustavo.png" alt="Gustavo Martins">
           </div>
         </div>
@@ -107,21 +120,21 @@
       <div class="interface">
         <h2 class="titulo">MINHAS <span> ESPECIALIDADES.</span></h2>
         <div class="flex">
-          <div class="especialidades-box">
+          <div class="especialidades-box efeito-especialidades-1">
             <i class="bi bi-code-square"></i>
             <h3>Website</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempore, nulla rem dolore inventore delectus at.
             </p>
           </div>
 
-          <div class="especialidades-box">
+          <div class="especialidades-box efeito-especialidades-2">
             <i class="bi bi-cart"></i>
             <h3>Loja online</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempore, nulla rem dolore inventore delectus at.
             </p>
           </div>
 
-          <div class="especialidades-box">
+          <div class="especialidades-box efeito-especialidades-3">
             <i class="bi bi-wordpress"></i>
             <h3>Blog</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempore, nulla rem dolore inventore delectus at.
@@ -134,27 +147,30 @@
     <section class="sobre" id="sobre">
       <div class="interface">
         <div class="flex">
-          <div class="img-sobre">
+          <div class="img-sobre efeito-img-sobre">
             <img src="images/gustavo_perfil.png" alt="Gustavo Martins">
           </div>
 
           <div class="txt-sobre">
-            <h2>MUITO PRAZER, <span>SOU GUSTAVO MARTINS.</span></h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia omnis neque magnam nemo ipsam? Ut in
+            <h2 class="efeito-h2-sobre">MUITO PRAZER, <span class="efeito-span-sobre">SOU GUSTAVO MARTINS.</span></h2>
+            <p class="efeito-p-1-sobre">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia omnis neque magnam nemo ipsam? Ut in
               eius reiciendis aliquam tenetur vel voluptatibus eveniet. Nulla, accusamus omnis distinctio veniam est
               officiis!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis architecto assumenda hic veniam fugit
+            <p class="efeito-p-2-sobre">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis architecto assumenda hic veniam fugit
               debitis obcaecati molestias. Hic itaque vero necessitatibus doloremque sapiente esse sed, quis veniam
               perspiciatis! Quas, rem.</p>
             <div class="btn-social">
               <a href="https://www.linkedin.com/in/gustavo-martins-dev/" target="_blank">
-                <button class="link link-1"><i class="bi bi-linkedin"></i></button>
+                <button class="link link-1 efeito-button-1-sobre"><i class="bi bi-linkedin"></i></button>
               </a>
               <a href="https://github.com/gumartins77" target="_blank">
-                <button class="link link-2"><i class="bi bi-github"></i></button>
+                <button class="link link-2 efeito-button-2-sobre"><i class="bi bi-github"></i></button>
               </a>
               <a href="https://www.instagram.com/gumartins77/" target="_blank">
-                <button class="link link-3"><i class="bi bi-instagram"></i></button>
+                <button class="link link-3 efeito-button-3-sobre"><i class="bi bi-instagram"></i></button>
+              </a>
+              <a href="https://wa.me/5519992599246" target="_blank">
+                <button class="link link-4 efeito-button-4-sobre"><i class="bi bi-whatsapp"></i></button>
               </a>
             </div>
           </div>
@@ -166,12 +182,12 @@
       <div class="interface">
         <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
         <div class="flex">
-          <div class="img-port" style="background-image: url(images/projeto-site-extra.png);">
+          <div class="img-port efeito-img-port-1" style="background-image: url(images/projeto-site-extra.png);">
             <a href="https://extramaquinas.com/" target="_blank">
               <div class="overlay"><p>Site Institucional da <span> Extra Máquinas S/A</span></p></div>
             </a>
           </div>
-          <div class="img-port" style="background-image: url(images/projeto-lp-extra.png);">
+          <div class="img-port efeito-img-port-2" style="background-image: url(images/projeto-lp-extra.png);">
             <a href="https://extramaquinas.com/whats/miniescavadeiras.html#" target="_blank">
               <div class="overlay"><p>LandingPage da <span> Extra Máquinas S/A</span></p></div>
             </a>
@@ -190,11 +206,11 @@
         <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
         <form action="">
-          <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-          <input type="text" name="" id="" placeholder="Seu email:" required>
-          <input type="text" name="" id="" placeholder="Seu celular:">
-          <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
-          <div class="btn-enviar"><input type="submit" value="Enviar"></div>
+          <input class="efeito-input-form-1" type="text" name="" id="" placeholder="Seu nome completo:" required>
+          <input class="efeito-input-form-2" type="text" name="" id="" placeholder="Seu email:" required>
+          <input class="efeito-input-form-3" type="text" name="" id="" placeholder="Seu celular:">
+          <textarea class="efeito-input-form-4" name="" id="" placeholder="Sua mensagem" required></textarea>
+          <div class="btn-enviar efeito-btn-enviar"><input type="submit" value="Enviar"></div>
         </form>
       </div>
     </section>
@@ -217,6 +233,9 @@
             </a>
             <a href="https://www.instagram.com/gumartins77/" target="_blank">
               <button class="link link-3"><i class="bi bi-instagram"></i></button>
+            </a>
+            <a href="https://wa.me/5519992599246" target="_blank">
+              <button class="link link-4"><i class="bi bi-whatsapp"></i></button>
             </a>
           </div>
         </div>

@@ -107,6 +107,14 @@ h2.titulo span {
     background-image: linear-gradient(45deg, #f9ce34,  #ee2a7b,  #6228d7);
 }
 
+.link-4 {
+    color: #25d366
+}
+
+.link-4::before {
+    background-color: #25d366;
+}
+
 .btn-social button::before {
     content: "";
     display: flex;
@@ -163,6 +171,10 @@ h2.titulo span {
         left: -60px;
         top: 100%;
     }
+}
+
+.efeito-txt-topo, .efeito-img-topo, .titulo, .efeito-especialidades-1, .efeito-especialidades-2, .efeito-especialidades-3, .efeito-img-sobre, .efeito-h2-sobre, .efeito-span-sobre, .efeito-p-1-sobre, .efeito-p-2-sobre, .efeito-button-1-sobre, .efeito-button-2-sobre, .efeito-button-3-sobre, .efeito-button-4-sobre, .efeito-img-port-1, .efeito-img-port-2, .efeito-input-form-1, .efeito-input-form-2, .efeito-input-form-3, .efeito-input-form-4, .efeito-btn-enviar {
+    visibility: hidden;
 }
 
 /* ESTILO DO HEADER  */
