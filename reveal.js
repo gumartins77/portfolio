@@ -43,62 +43,62 @@ revelar.reveal('.efeito-especialidades-3', {
 
 revelar.reveal('.efeito-img-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     origin: 'left'
 })
 
 revelar.reveal('.efeito-h2-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 300,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-span-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 400,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-p-1-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 500,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-p-2-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 600,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-button-1-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 700,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-button-2-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 800,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-button-3-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 900,
     origin: 'right'
 })
 
 revelar.reveal('.efeito-button-4-sobre', {
     duration: 1000,
-    distance: '50px',
+    distance: '30px',
     delay: 1000,
     origin: 'right'
 })
