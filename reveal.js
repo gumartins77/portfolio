@@ -121,6 +121,11 @@ revelar.reveal('.efeito-img-port-2', {
 
 // SESSÃO FORMULARIO
 
+revelar.reveal('.form', {
+    duration: 1000,
+    distance: '90px'
+})
+
 revelar.reveal('.efeito-input-form-1', {
     duration: 1000,
     distance: '90px',
