@@ -139,15 +139,33 @@ revelar.reveal('.efeito-input-form-3', {
     delay: 500
 })
 
-revelar.reveal('.efeito-input-form-4', {
+// revelar.reveal('.efeito-input-form-4', {
+//     duration: 1000,
+//     distance: '90px',
+//     delay: 600
+// })
+
+revelar.reveal('.label-efeito-form-1', {
     duration: 1000,
     distance: '90px',
-    delay: 600
+    delay: 250
+})
+
+revelar.reveal('.label-efeito-form-2', {
+    duration: 1000,
+    distance: '90px',
+    delay: 350
+})
+
+revelar.reveal('.label-efeito-form-3', {
+    duration: 1000,
+    distance: '90px',
+    delay: 450
 })
 
 revelar.reveal('.efeito-btn-enviar', {
     duration: 1000,
     distance: '90px',
-    delay: 700
+    delay: 600
 })
 

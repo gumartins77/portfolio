@@ -344,7 +344,7 @@ body.dark {
     background-color: #FFF;
 }
 
-body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark footer .line-footer p a {
+body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark form input.input, body.dark form .input-single label, body.dark footer .line-footer p a {
     color: #000;
 }
 
@@ -376,13 +376,20 @@ body.dark .overlay-menu {
     background-color: #000000ad;
 }
 
-body.dark form input, body.dark form textarea {
+body.dark form, body.dark form textarea {
     background-color: #a3a3a31d;
     color: #000;
 }
 
 body.dark .btn-social button {
     background-color: #a3a3a31d;
+}
+
+body.dark form .input-single .input:focus ~ label,
+body.dark form .input-single .input:valid ~ label {
+    transform: translateY(-26px);
+    font-size: 12px;
+    color: #6F6F6F;
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -576,9 +583,44 @@ form {
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+    background-color: #242424;
+    border-radius: 15px;
+    padding: 20px 15px;
 }
 
-form input, form textarea {
+.input-single {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-single label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    color: #FFF;
+    transition: all .2s;
+    cursor: text;
+}
+
+.input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: #FFF;
+    background-color: transparent;
+    border-bottom: 2px solid #CCC;
+    padding: 5px;
+    font-size: 17px;
+}
+
+form .input-single .input:focus ~ label,
+form .input-single .input:valid ~ label {
+    transform: translateY(-26px);
+    font-size: 12px;
+    color: #CCC;
+}
+
+/* form input, form textarea {
     width: 100%;
     background-color: #242424;
     border: 0;
@@ -587,7 +629,7 @@ form input, form textarea {
     border-radius: 15px;
     color: #FFF;
     font-size: 18px;
-}
+} */
 
 form textarea {
     resize: none;
@@ -601,12 +643,17 @@ form .btn-enviar {
 }
 
 form .btn-enviar input[type=submit] {
-    /* width: 120px; */
+    width: 120px;
     background-color: #00FF08;
     color: #000;
     font-weight: 700;
     cursor: pointer;
     transition: .2s;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
 }
 
 /* ESTILO DO FOOTER */
@@ -755,6 +802,10 @@ footer .line-footer p a {
 
     section.formulario {
         padding: 40px 8%;
+    }
+
+    form .btn-enviar input[type=submit] {
+        width: 100%;
     }
 }
 

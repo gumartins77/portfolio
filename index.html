@@ -203,13 +203,30 @@
 
     <section class="formulario" id="formulario">
       <div class="interface">
-        <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
         <form action="">
-          <input class="efeito-input-form-1" type="text" name="nome-form" id="nome-form" placeholder="Seu nome completo:" required>
-          <input class="efeito-input-form-2" type="text" name="email-form" id="email-form" placeholder="Seu email:" inputmode="email" required>
-          <input class="efeito-input-form-3" type="text" name="celular-form" id="celular-form" placeholder="Seu celular:" inputmode="numeric">
-          <textarea class="efeito-input-form-4" name="mensagem-form" id="mensagem-form" placeholder="Sua mensagem" required></textarea>
+          <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+
+          <div class="input-single efeito-input-form-1">
+            <input class="input" type="text" name="nome-form" id="nome-form" autocomplete="off" required>
+            <label for="nome-form">Seu nome completo</label>
+          </div>
+
+          <div class="input-single efeito-input-form-2">
+            <input class="input" type="text" name="email-form" id="email-form" inputmode="email" autocomplete="off" required>
+            <label for="email-form">Seu e-mail</label>
+          </div>
+
+          <div class="input-single efeito-input-form-3">
+            <input class="input" type="text" name="celular-form" id="celular-form" inputmode="numeric" autocomplete="off" required>
+            <label for="celular-form">Seu celular</label>
+          </div>
+
+          <!-- <div class="input-single">
+            <textarea class="input efeito-input-form-4" name="mensagem-form" id="mensagem-form" required></textarea>
+            <label for="mensagem-form">Sua mensagem</label>
+          </div> -->
+
           <div class="btn-enviar efeito-btn-enviar"><input type="submit" value="Enviar"></div>
         </form>
       </div>
