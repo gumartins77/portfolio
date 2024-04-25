@@ -344,8 +344,8 @@ body.dark {
     background-color: #FFF;
 }
 
-body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark form input.input, body.dark form .input-single label, body.dark footer .line-footer p a {
-    color: #000;
+body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark form input.input, body.dark form .input-single label, body.dark form textarea, body.dark footer .line-footer p a {
+    color: #000 !important;
 }
 
 body.dark section.portfolio, body.dark footer{
@@ -376,7 +376,7 @@ body.dark .overlay-menu {
     background-color: #000000ad;
 }
 
-body.dark form, body.dark form textarea {
+body.dark form {
     background-color: #a3a3a31d;
     color: #000;
 }
@@ -387,9 +387,7 @@ body.dark .btn-social button {
 
 body.dark form .input-single .input:focus ~ label,
 body.dark form .input-single .input:valid ~ label {
-    transform: translateY(-26px);
-    font-size: 12px;
-    color: #6F6F6F;
+    color: #6F6F6F !important;
 }
 
 body.dark .especialidades .especialidades-box:hover {
@@ -625,6 +623,13 @@ form .input-single .input:valid ~ label {
     color: #CCC;
 }
 
+form .input-single .input-textarea:focus ~ label,
+form .input-single .input-textarea:valid ~ label {
+    transform: translateY(-36px);
+    font-size: 12px;
+    color: #CCC;
+}
+
 /* form input, form textarea {
     width: 100%;
     background-color: #242424;
@@ -638,8 +643,12 @@ form .input-single .input:valid ~ label {
 
 form textarea {
     resize: none;
-    height: 200px;
-    max-height: 200px;
+    height: 36px;
+    overflow: hidden;
+}
+
+form .efeito-input-form-4 label {
+    bottom: 12px;
 }
 
 form .btn-enviar {
