@@ -205,30 +205,33 @@
     <section class="formulario" id="formulario">
       <div class="interface">
 
-        <form action="" class="form">
+        <form action="https://api.staticforms.xyz/submit" method="post" class="form">
           <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
           <div class="input-single efeito-input-form-1">
-            <input class="input" type="text" name="nome-form" id="nome-form" autocomplete="off" required>
-            <label for="nome-form">Seu nome completo</label>
+            <input class="input" type="text" name="name" id="name" autocomplete="off" required>
+            <label for="name">Seu nome completo</label>
           </div>
 
           <div class="input-single efeito-input-form-2">
-            <input class="input" type="text" name="email-form" id="email-form" inputmode="email" autocomplete="off" required>
-            <label for="email-form">Seu e-mail</label>
+            <input class="input" type="text" name="email" id="email" inputmode="email" autocomplete="off" required>
+            <label for="email">Seu e-mail</label>
           </div>
 
           <div class="input-single efeito-input-form-3">
-            <input class="input" type="text" name="celular-form" id="celular-form" inputmode="numeric" autocomplete="off" required>
-            <label for="celular-form">Seu celular</label>
+            <input class="input" type="text" name="phone" id="phone" inputmode="numeric" autocomplete="off" required>
+            <label for="phone">Seu celular</label>
           </div>
 
           <div class="input-single efeito-input-form-4">
-            <textarea class="input input-textarea" name="mensagem-form" id="mensagem-form" required></textarea>
-            <label for="mensagem-form">Sua mensagem</label>
+            <textarea class="input input-textarea" name="message" id="message" required></textarea>
+            <label for="message">Sua mensagem</label>
           </div>
 
           <div class="btn-enviar efeito-btn-enviar"><input type="submit" value="Enviar"></div>
+
+          <input type="hidden" name="accessKey" value="444ca8be-ab97-45bf-b12c-eba0edae79db">
+          <input type="hidden" name="redirectTo" value="/obrigado.html">
         </form>
       </div>
     </section>

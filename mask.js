@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $('#celular-form').mask('(00) 0 0000-0000');
+  $('#phone').mask('(00) 0 0000-0000');
 });

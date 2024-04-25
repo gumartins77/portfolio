@@ -1,5 +1,5 @@
-const textarea = document.querySelector("#mensagem-form");
-const label = document.querySelector('label[for="mensagem-form"]');
+const textarea = document.querySelector("#message");
+const label = document.querySelector('label[for="message"]');
 
 textarea.addEventListener("input", function () {
   this.style.height = "36px";
