@@ -203,7 +203,7 @@ header > .interface {
 }
 
 header img {
-    height: 80px;
+    height: 40px;
 }
 
 header a {
@@ -718,7 +718,7 @@ footer .line-footer {
 }
 
 footer img {
-    height: 80px;
+    height: 40px;
 }
 
 footer .line-footer p i {
