@@ -1,9 +1,32 @@
+<!-- ###########################################################
+##
+##         GGGG    U    U   SSSS   TTTTT    A    V     V    OOO
+##        G    G   U    U  S          T     A A   V     V   O   O
+##       G        U    U   SSSS      T    AAAAA  V     V  O     O
+##       G   GGG  U    U      S      T    A   A   V   V    O   O
+##        G    G   UUUU    SSSS      T    A   A    VVV      OOO
+##
+##    
+##    Gostou do meu trabalho?
+##    entre em contato ;)
+##    
+##    Gustavo Martins
+##    (19) 9 9259-9246
+##    gugumartin77@gmail.com
+##                        
+############################################################ -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bem-vindo ao meu portfólio. Aqui você encontrará uma coleção dos meus trabalhos e projetos, incluindo designs de interface, desenvolvimento web e muito mais. Explore meu portfólio para ver meu trabalho e entre em contato para colaborações e oportunidades.">
+  <meta name="author" content="Gustavo Martins">
+  <meta name="keywords" content="programação, desenvolvimento web, design de interface, HTML, CSS, JavaScript, portfolio, projetos, desenvolvedor web, front-end, back-end, full stack, UI/UX, freelancer, colaboração, oportunidades, Gustavo Martins, Gustavo, PHP, JS, NodeJS, Node">
+  <title>Gustavo Martins - Portfólio</title>
+  <link rel="shortcut icon" type="imagex/png" href="images/logo.png">
   
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,14 +55,13 @@
   <script src="mask.js" defer></script>
   <script src="textarea.js" defer></script>
   <script src="form.js" defer></script>
+  <script src="obrigado.js" defer></script>
   <!-- FIM SCRIPTS JS -->
 
   <!-- SCRIPT JQUERY -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
   <!-- FIM SCRIPT JQUERY -->
-
-  <title>GM .DEV</title>
 </head>
 
 <body>
@@ -206,8 +228,8 @@
     <section class="formulario" id="formulario">
       <div class="interface">
 
-        <form action="https://api.staticforms.xyz/submit" method="post" class="form" id="form">
-          <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+        <form action="https://api.staticforms.xyz/submit" method="post" class="form" id="form" novalidate>
+          <h2 class="titulo" id="titulo-form">FALA <span>COMIGO.</span></h2>
 
           <div class="input-single efeito-input-form-1">
             <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
@@ -236,7 +258,7 @@
           <div class="btn-enviar efeito-btn-enviar"><input type="submit" value="Enviar" onclick="formValidade()"></div>
 
           <input type="hidden" name="accessKey" value="444ca8be-ab97-45bf-b12c-eba0edae79db">
-          <input type="hidden" name="redirectTo" value="/obrigado.html">
+          <input type="hidden" name="redirectTo" value="https://clever-meerkat-febc7f.netlify.app?section=obrigado#formulario">
         </form>
       </div>
     </section>

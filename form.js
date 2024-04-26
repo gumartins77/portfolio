@@ -8,7 +8,6 @@ const phoneRegex = /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/;
 form.addEventListener("submit", (event) => {
     let isValid = true;
 
-    // Realiza a validação de todos os campos
     if (campos[0].value.length < 3) {
         setError(0);
         isValid = false;
@@ -37,7 +36,6 @@ form.addEventListener("submit", (event) => {
         removeError(3);
     }
   
-    // Se algum campo for inválido, impede o envio do formulário
     if (!isValid) {
         event.preventDefault();
     }

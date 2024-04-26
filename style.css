@@ -344,7 +344,7 @@ body.dark {
     background-color: #FFF;
 }
 
-body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark form input.input, body.dark form .input-single label, body.dark form textarea, body.dark footer .line-footer p a {
+body.dark .topo-do-site .txt-topo-site h1, body.dark h2.titulo, body.dark .topo-do-site .txt-topo-site p, body.dark .especialidades .especialidades-box, body.dark .sobre .txt-sobre, body.dark form input.input, body.dark form .input-single label, body.dark form textarea, body.dark form p, body.dark footer .line-footer p a {
     color: #000 !important;
 }
 
@@ -589,6 +589,26 @@ form {
     background-color: #242424;
     border-radius: 15px;
     padding: 20px 15px;
+}
+
+form h2.titulo {
+    font-size: 34px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 15px;
+    transition: .5s;
+}
+
+form p {
+    color: #FFF;
+    transition: .5s;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+form p i {
+    color: #00FF08;
 }
 
 .input-single {
