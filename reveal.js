@@ -119,6 +119,13 @@ revelar.reveal('.efeito-img-port-2', {
     origin: 'bottom'
 })
 
+revelar.reveal('.efeito-img-port-3', {
+    duration: 1000,
+    distance: '90px',
+    delay: 900,
+    origin: 'bottom'
+})
+
 // SESSÃO FORMULARIO
 
 revelar.reveal('.form', {
