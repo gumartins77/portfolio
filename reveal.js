@@ -103,6 +103,92 @@ revelar.reveal('.efeito-button-4-sobre', {
     origin: 'right'
 })
 
+// SESSÃO HABILIDADES 
+
+revelar.reveal('.efeito-card-01', {
+    duration: 1000,
+    distance: '15px',
+    delay: 100,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-02', {
+    duration: 1000,
+    distance: '15px',
+    delay: 150,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-03', {
+    duration: 1000,
+    distance: '15px',
+    delay: 200,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-04', {
+    duration: 1000,
+    distance: '15px',
+    delay: 250,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-05', {
+    duration: 1000,
+    distance: '15px',
+    delay: 300,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-06', {
+    duration: 1000,
+    distance: '15px',
+    delay: 350,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-07', {
+    duration: 1000,
+    distance: '15px',
+    delay: 400,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-08', {
+    duration: 1000,
+    distance: '15px',
+    delay: 450,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-09', {
+    duration: 1000,
+    distance: '15px',
+    delay: 500,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-10', {
+    duration: 1000,
+    distance: '15px',
+    delay: 560,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-11', {
+    duration: 1000,
+    distance: '15px',
+    delay: 600,
+    origin: 'right'
+})
+
+revelar.reveal('.efeito-card-12', {
+    duration: 1000,
+    distance: '15px',
+    delay: 650,
+    origin: 'right'
+})
+
 // SESSÃO PORTFOLIO
 
 revelar.reveal('.efeito-img-port-1', {
