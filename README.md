@@ -29,11 +29,28 @@ GEMINI_FALLBACK_MODEL=gemini-flash-lite-latest
 
 Na Netlify, cadastre as mesmas variáveis em *Site configuration → Environment variables*.
 
+## Formulário de contato (Resend)
+
+O formulário envia para `/api/contact`, que manda o e-mail pela [Resend](https://resend.com) (plano grátis: 3.000 e-mails/mês, 100/dia).
+
+1. Crie a conta na Resend **com o e-mail que vai receber os contatos** (sem domínio próprio, a Resend só entrega para o e-mail da conta).
+2. Em *API Keys*, crie uma chave com permissão **Sending access** e coloque no `.env`:
+
+```env
+RESEND_API_KEY=re_sua-chave
+# Opcional: padrão é o e-mail de src/data/profile.ts
+CONTACT_TO_EMAIL=seu-email@exemplo.com
+```
+
+- O e-mail chega com **Responder** apontando para o visitante, e o celular vira link de WhatsApp.
+- Proteções: só aceita o próprio site, validação com o mesmo schema do formulário (zod), limite por IP (5/hora, 15/dia) e campo invisível anti-spam.
+- Com domínio próprio verificado na Resend, defina `CONTACT_FROM_EMAIL` (ex.: `Portfólio <contato@seudominio.com>`).
+
 ## Estrutura
 
 ```
 src/
-  app/            layout (SEO, tema, JSON-LD), página, /api/chat, sitemap, robots
+  app/            layout (SEO, tema, JSON-LD), página, /api/chat, /api/contact, sitemap, robots
   components/     seções do site + Chatbot (cada um com seu CSS Module)
   data/profile.ts todo o conteúdo do site (experiência, skills, projetos, contatos)
   lib/            system prompt do assistente, tipos e checagem de origem

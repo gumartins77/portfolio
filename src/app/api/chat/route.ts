@@ -3,6 +3,7 @@ import { ApiError, GoogleGenAI, type Content } from "@google/genai";
 import { z } from "zod";
 import { ASSISTANT_SYSTEM_PROMPT } from "@/lib/assistant-prompt";
 import type { ChatStreamEvent } from "@/lib/chat-types";
+import { clientIp, createRateLimiter } from "@/lib/rate-limit";
 import { isSameOrigin } from "@/lib/request-origin";
 
 // Limites por visitante (IP) para proteger a cota gratuita do Gemini.
@@ -27,25 +28,10 @@ const bodySchema = z.object({
     .refine((m) => m[m.length - 1].text.length <= 1000, "Mensagem muito longa (máx. 1000 caracteres)."),
 });
 
-const hits = new Map<string, number[]>();
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const day = (hits.get(ip) ?? []).filter((t) => now - t < 24 * 60 * 60 * 1000);
-  const recent = day.filter((t) => now - t < 10 * 60 * 1000);
-  if (recent.length >= LIMIT_PER_10_MIN || day.length >= LIMIT_PER_DAY) {
-    hits.set(ip, day);
-    return true;
-  }
-  hits.set(ip, [...day, now]);
-  if (hits.size > 5000) hits.delete(hits.keys().next().value!);
-  return false;
-}
-
-function clientIp(request: NextRequest) {
-  const h = request.headers;
-  return h.get("x-nf-client-connection-ip") ?? h.get("x-forwarded-for")?.split(",")[0].trim() ?? "local";
-}
+const rateLimited = createRateLimiter([
+  { ms: 10 * 60 * 1000, max: LIMIT_PER_10_MIN },
+  { ms: 24 * 60 * 60 * 1000, max: LIMIT_PER_DAY },
+]);
 
 class TimeoutError extends Error {
   constructor(model: string) {

@@ -1,27 +1,28 @@
 "use client";
 
-import { useState, useSyncExternalStore, type ChangeEvent, type FormEvent, type InputHTMLAttributes } from "react";
-import { contactForm } from "@/data/profile";
+import { useState, type ChangeEvent, type FormEvent, type InputHTMLAttributes } from "react";
+import { socials } from "@/data/profile";
+import { contactSchema, type ContactField } from "@/lib/contact-schema";
 import styles from "./ContactForm.module.css";
 
-type Field = "name" | "email" | "phone" | "message";
-type Values = Record<Field, string>;
+type Values = Record<ContactField, string>;
+type Status = "idle" | "sending" | "sent" | "error";
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const FIELDS: ContactField[] = ["name", "email", "phone", "message"];
+const whatsapp = socials.find((s) => s.variant === "whatsapp")!.href;
 
-const validators: Record<Field, (v: string) => boolean> = {
-  name: (v) => v.trim().length >= 3,
-  email: (v) => EMAIL_RE.test(v.trim()),
-  phone: (v) => /^\d{10,11}$/.test(v.replace(/\D/g, "")),
-  message: (v) => v.trim().length >= 3,
-};
-
-const errors: Record<Field, string> = {
-  name: "Nome deve ter no mínimo 3 caracteres",
-  email: "Digite um e-mail válido",
-  phone: "Digite um telefone válido com DDD",
-  message: "Mensagem deve ter no mínimo 3 caracteres",
-};
+/** Erro de cada campo segundo o mesmo schema que a API usa. */
+function fieldErrors(values: Values) {
+  const result = contactSchema.safeParse(values);
+  const errors: Partial<Record<ContactField, string>> = {};
+  if (!result.success) {
+    for (const issue of result.error.issues) {
+      const field = issue.path[0] as ContactField;
+      errors[field] ??= issue.message;
+    }
+  }
+  return errors;
+}
 
 /** (00) 0 0000-0000 para celular, (00) 0000-0000 para fixo. */
 function maskPhone(raw: string) {
@@ -32,18 +33,18 @@ function maskPhone(raw: string) {
   return `(${d.slice(0, 2)}) ${d.slice(2, 3)} ${d.slice(3, 7)}-${d.slice(7)}`;
 }
 
-const subscribe = () => () => {};
-const isThankYou = () => new URLSearchParams(window.location.search).get("section") === "obrigado";
-
 export function ContactForm() {
-  const sent = useSyncExternalStore(subscribe, isThankYou, () => false);
   const [values, setValues] = useState<Values>({ name: "", email: "", phone: "", message: "" });
-  const [touched, setTouched] = useState<Partial<Record<Field, boolean>>>({});
+  const [touched, setTouched] = useState<Partial<Record<ContactField, boolean>>>({});
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [serverError, setServerError] = useState("");
 
-  const invalid = (field: Field) => Boolean(touched[field]) && !validators[field](values[field]);
+  const errors = fieldErrors(values);
+  const invalid = (field: ContactField) => Boolean(touched[field] && errors[field]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    const field = e.target.name as Field;
+    const field = e.target.name as ContactField;
     const value = field === "phone" ? maskPhone(e.target.value) : e.target.value;
     setValues((v) => ({ ...v, [field]: value }));
     setTouched((t) => ({ ...t, [field]: true }));
@@ -54,19 +55,37 @@ export function ContactForm() {
     }
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    const fields = Object.keys(validators) as Field[];
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "sending") return;
+
     setTouched({ name: true, email: true, phone: true, message: true });
-    const firstInvalid = fields.find((f) => !validators[f](values[f]));
+    const firstInvalid = FIELDS.find((f) => errors[f]);
     if (firstInvalid) {
-      e.preventDefault();
       (e.currentTarget.elements.namedItem(firstInvalid) as HTMLElement | null)?.focus();
+      return;
+    }
+
+    setStatus("sending");
+    setServerError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, website: honeypot }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error ?? "Não consegui enviar sua mensagem agora.");
+      setStatus("sent");
+    } catch (err) {
+      setServerError((err as Error).message);
+      setStatus("error");
     }
   }
 
-  if (sent) {
+  if (status === "sent") {
     return (
-      <div className={styles.form}>
+      <div className={styles.form} role="status">
         <h2 className="section-title">
           Obrigado <span>pelo contato.</span>
         </h2>
@@ -77,7 +96,7 @@ export function ContactForm() {
     );
   }
 
-  const input = (field: Field, label: string, props: InputHTMLAttributes<HTMLInputElement>) => (
+  const input = (field: ContactField, label: string, props: InputHTMLAttributes<HTMLInputElement>) => (
     <div className={styles.field}>
       <input
         id={field}
@@ -99,7 +118,7 @@ export function ContactForm() {
   );
 
   return (
-    <form action={contactForm.action} method="post" className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <h2 className="section-title">
         Fala <span>comigo.</span>
       </h2>
@@ -128,11 +147,38 @@ export function ContactForm() {
         </span>
       </div>
 
-      <input type="hidden" name="accessKey" value={contactForm.accessKey} />
-      <input type="hidden" name="redirectTo" value={contactForm.redirectTo} />
+      <div className={styles.honeypot} aria-hidden="true">
+        <label htmlFor="website">Não preencha este campo</label>
+        <input
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
 
-      <button type="submit" className={`btn-primary ${styles.submit}`}>
-        Enviar <i className="bi bi-send-fill" aria-hidden="true" />
+      {status === "error" && (
+        <p className={styles.serverError} role="alert">
+          {serverError}{" "}
+          <a href={whatsapp} target="_blank" rel="noopener noreferrer">
+            Fale comigo pelo WhatsApp
+          </a>
+          .
+        </p>
+      )}
+
+      <button type="submit" className={`btn-primary ${styles.submit}`} disabled={status === "sending"}>
+        {status === "sending" ? (
+          <>
+            Enviando... <i className={`bi bi-arrow-repeat ${styles.spin}`} aria-hidden="true" />
+          </>
+        ) : (
+          <>
+            Enviar <i className="bi bi-send-fill" aria-hidden="true" />
+          </>
+        )}
       </button>
     </form>
   );

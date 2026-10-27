@@ -287,8 +287,3 @@ export const projects = [
   },
 ] as const;
 
-export const contactForm = {
-  action: "https://api.staticforms.xyz/submit",
-  accessKey: "444ca8be-ab97-45bf-b12c-eba0edae79db",
-  redirectTo: `${SITE_URL}/?section=obrigado#contato`,
-} as const;

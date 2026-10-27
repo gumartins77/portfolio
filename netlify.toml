@@ -5,9 +5,9 @@
 [build.environment]
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
-  # Nomes de modelo não são segredos: aparecem no código e no README.
-  # A GEMINI_API_KEY continua sendo verificada pelo scanner.
-  SECRETS_SCAN_OMIT_KEYS = "GEMINI_MODEL,GEMINI_FALLBACK_MODEL"
+  # Nomes de modelo e e-mails de contato não são segredos: aparecem no código e no README.
+  # GEMINI_API_KEY e RESEND_API_KEY continuam sendo verificadas pelo scanner.
+  SECRETS_SCAN_OMIT_KEYS = "GEMINI_MODEL,GEMINI_FALLBACK_MODEL,CONTACT_TO_EMAIL,CONTACT_FROM_EMAIL"
 
 # Runtime de Next.js da Netlify (OpenNext): serve as páginas, a rota /api/chat
 # e os arquivos de /public. Declarado explicitamente porque o site foi criado
