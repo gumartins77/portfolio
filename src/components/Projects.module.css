@@ -1,0 +1,157 @@
+.section {
+  box-shadow: 0 0 40px 10px var(--glow);
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.subtitle i {
+  color: var(--accent);
+}
+
+.aiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 40px 0 20px;
+  list-style: none;
+}
+
+.aiGrid > li > div {
+  height: 100%;
+}
+
+.aiCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  border: 1px solid transparent;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.aiCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--hover-shadow);
+}
+
+.aiIcon {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.context {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.aiCard h4 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 4px 0 10px;
+}
+
+.description {
+  flex: 1;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+  list-style: none;
+}
+
+.stack :global(.chip) {
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  justify-content: space-around;
+  gap: 60px 40px;
+  margin-top: 40px;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 460px;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+.card img {
+  object-fit: cover;
+  object-position: 100% 0%;
+  transition: object-position 8s linear;
+}
+
+.card:hover img,
+.card:focus-visible img {
+  object-position: 100% 100%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  background-color: #000000b8;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.client {
+  color: var(--accent);
+}
+
+.visit {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card:hover .overlay,
+.card:focus-visible .overlay {
+  opacity: 1;
+}
+
+/* Sem hover (toque): legenda sempre visível na base do card */
+@media (hover: none) {
+  .overlay {
+    opacity: 1;
+    place-content: end center;
+    padding-bottom: 32px;
+    font-size: 20px;
+    background: linear-gradient(transparent 40%, #000000e0);
+  }
+}

@@ -1,0 +1,164 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  padding: 32px var(--gutter);
+  transition: padding 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+.rolagem {
+  padding: 16px var(--gutter);
+  background-color: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px 10px var(--glow);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.desktop ul {
+  display: flex;
+  gap: clamp(16px, 2.6vw, 40px);
+  list-style: none;
+}
+
+.desktop a {
+  position: relative;
+  display: inline-block;
+  color: var(--nav);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.desktop a::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--accent);
+  transition: width 0.5s;
+}
+
+.desktop a:hover {
+  color: var(--text);
+  transform: scale(1.05);
+}
+
+.desktop a:hover::after {
+  width: 30px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.burger,
+.close {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--accent);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.burger {
+  font-size: 40px;
+}
+
+/* MENU MOBILE */
+
+.mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: min(80%, 360px);
+  height: 100dvh;
+  background-color: var(--bg);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.5s var(--ease), visibility 0.5s;
+}
+
+.mobile.open {
+  transform: none;
+  visibility: visible;
+}
+
+.close {
+  display: block;
+  font-size: 30px;
+  margin: 20px 8% 20px auto;
+}
+
+.mobile ul {
+  list-style: none;
+  text-align: right;
+}
+
+.mobile a {
+  display: block;
+  padding: 18px 8%;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.mobile a:hover,
+.mobile a:focus-visible {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.overlayOn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 1100px) {
+  .desktop,
+  .cta {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    height: 32px;
+  }
+
+  .actions {
+    gap: 14px;
+  }
+}
