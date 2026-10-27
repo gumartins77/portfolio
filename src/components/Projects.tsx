@@ -15,8 +15,8 @@ export function Projects() {
           <i className="bi bi-cpu" aria-hidden="true" /> IA & Automação
         </Reveal>
         <Reveal as="p" className="section-lead" delay={150}>
-          Soluções em produção para empresas. Por serem sistemas internos, não têm link público, mas posso apresentar em
-          uma conversa.
+          Soluções em produção para empresas e projetos próprios. Os sistemas internos não têm link público, mas posso
+          apresentar em uma conversa.
         </Reveal>
 
         <ul className={styles.aiGrid}>
@@ -35,6 +35,12 @@ export function Projects() {
                       </li>
                     ))}
                   </ul>
+                  {project.href && (
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className={styles.aiLink}>
+                      Ver projeto <i className="bi bi-box-arrow-up-right" aria-hidden="true" />
+                      <span className="sr-only"> {project.title}</span>
+                    </a>
+                  )}
                 </article>
               </Reveal>
             </li>

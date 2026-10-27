@@ -80,6 +80,27 @@
   list-style: none;
 }
 
+.aiLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 6px 16px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.aiLink:hover {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
 .stack :global(.chip) {
   font-size: 12px;
   padding: 3px 10px;

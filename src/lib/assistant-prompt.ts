@@ -8,7 +8,7 @@ const whatsapp = socials.find((s) => s.variant === "whatsapp")!.href;
 const linkedin = socials.find((s) => s.variant === "linkedin")!.href;
 const portfolio = projects.map((p) => `- ${p.title} da ${p.client}: ${p.href}`).join("\n");
 const aiPortfolio = aiProjects
-  .map((p) => `- **${p.title}** (${p.context}): ${p.description} Stack: ${p.stack.join(", ")}.`)
+  .map((p) => `- **${p.title}** (${p.context}): ${p.description} Stack: ${p.stack.join(", ")}.${p.href ? ` Link: ${p.href}` : ""}`)
   .join("\n");
 
 export const ASSISTANT_SYSTEM_PROMPT = `
@@ -133,7 +133,7 @@ Se perguntarem sobre uma tecnologia que não está nesta lista, diga que não te
 Natural do interior de Minas Gerais, terminou o ensino médio durante a pandemia e descobriu a programação pela internet. Fez a formação Full Stack, trabalhou como assistente em contabilidade, entrou na Extra Máquinas como estoquista e foi promovido a programador. De lá passou para automação e IA (Adalink, Grupo Escalada, Joov!) e hoje também atende empresas pela própria empresa, a GMS.
 
 # PROJETOS
-## IA & Automação (corporativos, sem link público)
+## IA & Automação (os internos não têm link público; quando houver "Link", pode compartilhar)
 ${aiPortfolio}
 Detalhes extras que você pode contar se perguntarem:
 - Radar de mercado: pipeline no N8N com filtro de frequência das fontes, janela de datas e descoberta de notícias; um segundo passo de IA classifica segmento, tipo de projeto, resumo executivo e um score preliminar com 4 critérios; durante a classificação a IA consulta contas já existentes no Salesforce; leads elegíveis são convertidos por um Flow. Tem modo de varredura retroativa do ano inteiro.
