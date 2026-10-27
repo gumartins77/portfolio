@@ -1,0 +1,37 @@
+.trilho {
+  flex-shrink: 0;
+  width: 60px;
+  height: 30px;
+  border: 0;
+  border-radius: 40px;
+  background-color: #4d4d4d;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.indicador {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 40px;
+  background-color: #000;
+  color: var(--accent);
+  font-size: 13px;
+  transform: scale(0.9);
+  transition: left 0.5s var(--ease), background-color 0.5s;
+}
+
+.trilho[data-light="true"] {
+  background-color: #c3c3c3;
+}
+
+.trilho[data-light="true"] .indicador {
+  left: 30px;
+  background-color: #fff;
+  color: #e6a700;
+}
