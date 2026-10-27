@@ -196,9 +196,10 @@ export type AiProject = {
   context: string;
   description: string;
   stack: string[];
+  href?: string;
 };
 
-/** Projetos de IA e automação. Os corporativos não têm link público. */
+/** Projetos de IA e automação. Os corporativos internos não têm link público. */
 export const aiProjects: AiProject[] = [
   {
     icon: "bi-radar",
@@ -223,6 +224,7 @@ export const aiProjects: AiProject[] = [
     description:
       "Assistente de vendas e SAC integrado à loja VTEX: tira dúvidas, ajuda na jornada de compra e encaminha para vendedores, com arquitetura multiagente.",
     stack: ["VTEX", "Typebot", "N8N", "GPT-4.1"],
+    href: "https://www.lojapayot.com.br/",
   },
   {
     icon: "bi-people",
@@ -263,6 +265,7 @@ export const aiProjects: AiProject[] = [
     description:
       "App de academia com histórico de cargas, calendário e um Coach IA (Gemini) que analisa a evolução e monta e edita treinos pelo chat.",
     stack: ["Next.js 16", "Supabase", "Gemini", "PWA"],
+    href: "https://trein-app.netlify.app/",
   },
 ];
 
